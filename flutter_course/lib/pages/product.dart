@@ -8,6 +8,8 @@ class ProductPage extends StatelessWidget {
         title: Text('Product Detail'),
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Text('Details'),
           RaisedButton(
