@@ -9,34 +9,47 @@ class Products extends StatelessWidget {
     print('[Products State] contructor()');
   }
 
+  Widget _buildProductionItem(BuildContext context, int index) {
+    return Card(
+      child: Column(
+        children: <Widget>[
+          Image.asset('assets/food.jpg'),
+          Text(products[index])
+        ],
+      ),
+    );
+  }
+
+  Widget _buildProductList() {
+    Widget productCard = Center(
+      child: Text('No product found, please add some.'),
+    );
+
+    if (products.length > 0) {
+      productCard = ListView.builder(
+        itemBuilder: _buildProductionItem,
+        itemCount: products.length,
+      );
+    }
+  /*
+    productCard = Container();
+    */
+
+    return productCard;
+  }
+
   @override
   Widget build(BuildContext context) {
     print('[Products State] build()');
-    return Column(
-      children: products
-          .map((element) => Card(
-                  child: Column(
-                children: <Widget>[
-                  Image.asset('assets/food.jpg'),
-                  Text(element),
-                  ButtonBar(
-                    alignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      FlatButton(
-                        child: Text('Details'),
-                        onPressed: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (BuildContext context) =>
-                                    ProductPage(),
-                              ),
-                            ),
-                      )
-                    ],
-                  )
-                ],
-              )))
-          .toList(),
-    );
+    return _buildProductList();
+
+    /*return products.length > 0
+        ? ListView.builder(
+            itemBuilder: _buildProductionItem,
+            itemCount: products.length,
+          )
+        : Center(
+            child: Text('No product found, please add some.'),
+          );*/
   }
 }
