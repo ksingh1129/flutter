@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
-import './products_manager.dart';
+//import 'package:flutter/rendering.dart';
+
+import './pages/home.dart';
 
 main() {
+  // debugPaintSizeEnabled = true;
+  // debugPaintBaselinesEnabled = true;
+  // debugPaintPointersEnabled = true;
+
   runApp(MyApp());
 }
 
@@ -9,15 +15,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        theme: ThemeData(
+      theme: ThemeData(
           brightness: Brightness.light,
           primarySwatch: Colors.deepOrange,
-          accentColor: Colors.deepPurple
-        ),
-        home: Scaffold(
-            appBar: AppBar(
-              title: Text('EasyList'),
-            ),
-            body: ProductManager('Food Tester')));
+          accentColor: Colors.deepPurple),
+      home: HomePage()
+    );
   }
 }
