@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class ProductPage extends StatelessWidget {
-
   final String title;
   final String imageUrl;
 
@@ -9,27 +8,35 @@ class ProductPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          Image.asset(imageUrl),
-          Container(
-            padding: EdgeInsets.all(10.0),
-            child: Text(title),
-          ),
-          Container(
-            padding: EdgeInsets.all(10.0),
-            child: RaisedButton(
-              color: Theme.of(context).accentColor,
-              child: Text('DELETE'),
-              onPressed: () => Navigator.pop(context, true),
+    return WillPopScope(
+      //Use only if you need to handle software or hardware back button
+      onWillPop: () {
+        print('Back Button pressed.');
+        Navigator.pop(context, false); // Our custom reqest
+        return Future.value(false);
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(title),
+        ),
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Image.asset(imageUrl),
+            Container(
+              padding: EdgeInsets.all(10.0),
+              child: Text(title),
             ),
-          )
-        ],
+            Container(
+              padding: EdgeInsets.all(10.0),
+              child: RaisedButton(
+                color: Theme.of(context).accentColor,
+                child: Text('DELETE'),
+                onPressed: () => Navigator.pop(context, true),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
