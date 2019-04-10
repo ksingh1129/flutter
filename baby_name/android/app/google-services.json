@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "642511163012",
+    "firebase_url": "https://baby-names-app-db-d8c3d.firebaseio.com",
+    "project_id": "baby-names-app-db-d8c3d",
+    "storage_bucket": "baby-names-app-db-d8c3d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:642511163012:android:a5656ac6c3314bcf",
+        "android_client_info": {
+          "package_name": "com.pranworks.babynames"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "642511163012-tilqap5l6f8b4r5fnmn8ja0bn7m5b1pv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC23OUBqFjaJ9ioFeiKfZffJTrWAwpqyOM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "642511163012-tilqap5l6f8b4r5fnmn8ja0bn7m5b1pv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "642511163012-ntosgpu6e9kq30i5u7s0asfrmap6ctgs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.pranworks.babynames"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
